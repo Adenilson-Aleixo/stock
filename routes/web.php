@@ -15,3 +15,9 @@ Route::get('/', function () {
     //return view('welcome');
     return 'Primeira logica com laravel';
 });
+
+
+Route::get('/produtos', 'ProdutoController@lista');
+Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra');
+Route::get('/produtos/novo', 'ProdutoController@novo');
+Route::post('/produtos/adiciona', 'ProdutoController@adiciona');
