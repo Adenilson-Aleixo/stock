@@ -23,6 +23,17 @@ class ProdutoController extends Controller
     }
 
     /**
+     * Lista de produtos json
+     *
+     */
+    public function listaJson()
+    {
+        $produtos = DB::select('select * from produtos');
+
+        return response()->json($produtos);
+    }
+
+    /**
      * Detalhes do produto
      *
      */
@@ -60,7 +71,7 @@ class ProdutoController extends Controller
         $produto = DB::insert("insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)", 
                               [$nome, $quantidade, $valor, $descricao]);
 
-        return view('produto.adiciona')->with('nome', $nome);
+        return redirect('/produtos')->withInput(Request::only('nome'));
     }
 
 }

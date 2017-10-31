@@ -16,16 +16,15 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/produtos">Listagem</a></li>
+                    <li><a href="/produtos/novo">Novo</a></li>
                 </ul>
             </div>
         </nav>
+        @yield('conteudo')
+
+        <footer class="footer">
+            <p>© Livro de Laravel do Alura.</p>
+        </footer>
     </div>
-
-    @yield('conteudo')
-
-    <footer class="footer">
-        <p>© Livro de Laravel do Alura.</p>
-    </footer>
-
   </body>
 </html>
